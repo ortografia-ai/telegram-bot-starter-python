@@ -12,12 +12,14 @@ This is a telegram bot starter repository with the following characteristics:
 - Alembic migrations
 - Pydantic models
 - Docker support with a lean multi-stage image build process
+- It comes with a `User` database model and authorization to restrict the use of certain commands to some users.
 
-The bot comes with three commands:
+The bot comes with four commands:
 
 1. `/start`: This simply prints a message.
 2. `/commands`: This prints the list of commands available.
 3. `/helloworld`: This command registers the user sending the message in database and responds with a simple message.
+4. `/restrictedhelloworld`: This command sends a simple message if the user is registered and is above ADMIN.
 
 ## Installation
 

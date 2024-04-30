@@ -19,9 +19,10 @@ from bot.constants import (
     START_COMMAND,
     COMMANDS_COMMAND,
     HELLO_WORLD_COMMAND,
+    RESTRICTED_HELLO_WORLD_COMMAND,
 )
 from bot.settings import get_settings
-from bot.handlers.hello_world import hello_world_handler
+from bot.handlers.hello_world import hello_world_handler, restricted_hello_world_handler
 
 
 logging.basicConfig(
@@ -117,6 +118,9 @@ if __name__ == "__main__":
     application.add_handler(start_handler)
     application.add_handler(commands_handler)
     application.add_handler(hello_world_handler(HELLO_WORLD_COMMAND))
+    application.add_handler(
+        restricted_hello_world_handler(RESTRICTED_HELLO_WORLD_COMMAND)
+    )
     application.add_handler(unknown_handler)
 
     # Register error handler
