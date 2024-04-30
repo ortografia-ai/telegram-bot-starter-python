@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: .
+    volumes:
+      - "./database.db:/db/database.db"
+    environment:
+      DB_PATH: /db/database.db
+      # loads from .env file
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      DEVELOPER_CHAT_ID: ${DEVELOPER_CHAT_ID}
