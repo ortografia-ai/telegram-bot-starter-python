@@ -23,7 +23,8 @@ The bot comes with three commands:
 
 1. Clone this repository
 2. Install dependencies by running `make install-dev` or `poetry install --all-extras`
-3. Run the database migrations by running `make migrate`
+3. Install the pre-commit hooks by running `poetry run pre-commit install`
+4. Run the database migrations by running `make migrate`
 
 ## Create and run the bot
 
