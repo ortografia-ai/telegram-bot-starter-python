@@ -18,6 +18,9 @@ async def _hello_world(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
                 id=telegram_user.id,
             )
         )
+
+    if not update.effective_chat:
+        return
     response = "Hello, world! You are now registered in the system."
     await context.bot.send_message(chat_id=update.effective_chat.id, text=response)
     return
@@ -32,6 +35,8 @@ def hello_world_handler(command: str) -> CommandHandler:
 async def _restricted_hello_world(
     update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
+    if not update.effective_chat:
+        return
     response = "Hello, world! You are authorized."
     await context.bot.send_message(chat_id=update.effective_chat.id, text=response)
     return

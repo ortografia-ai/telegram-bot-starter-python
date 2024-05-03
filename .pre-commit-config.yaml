@@ -22,3 +22,5 @@ repos:
         additional_dependencies:
           - sqlmodel
           - pydantic
+          - pydantic-settings
+          - python-telegram-bot
