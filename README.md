@@ -2,17 +2,17 @@
 
 This is a telegram bot starter repository with the following characteristics:
 
-- Poetry dependency management
-- Ruff linting and formatting
-- Pre-commit hooks configured for:
-    - Ruff linting and formatting
-    - Poetry checks
-    - Mypy type checking
+- uv dependency management
+- ruff linting and formatting
+- pre-commit hooks configured for:
+    - ruff linting and formatting
+    - uv checks
+    - mypy type checking
 - SQLModel ORM with SQLite configured already
-- Alembic migrations
-- Pydantic models
-- Docker support with a lean multi-stage image build process
-- It comes with a `User` database model and authorization to restrict the use of certain commands to some users.
+- alembic migrations
+- pydantic models
+- docker support with a lean multi-stage image build process
+- it comes with a `User` database model and authorization to restrict the use of certain commands to some users.
 
 The bot comes with four commands:
 
@@ -24,8 +24,8 @@ The bot comes with four commands:
 ## Installation
 
 1. Clone this repository
-2. Install dependencies by running `make install-dev` or `poetry install --all-extras`
-3. Install the pre-commit hooks by running `poetry run pre-commit install`
+2. Install dependencies by running `make install-dev` or `uv sync --all-extras`
+3. Install the pre-commit hooks by running `uv run pre-commit install`
 4. Run the database migrations by running `make migrate`
 
 ## Create and run the bot

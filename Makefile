@@ -1,18 +1,18 @@
 .PHONY: install
 install:
-	poetry install
+	uv sync
 
 .PHONY: install-dev
 install-dev:
-	poetry install --all-extras
+	uv sync --all-extras
 
 .PHONY: run
 run:
-	poetry run python -m bot.app
+	uv run -m bot.app
 
 .PHONY: migrate
 migrate:
-	poetry run python -m alembic upgrade head
+	uv run -m alembic upgrade head
 
 .PHONY: run-docker-detached
 run-docker-detached:
@@ -32,4 +32,4 @@ stop-docker:
 # Example: make autogen-migrations message="create table users"
 .PHONY: autogen-migrations
 autogen-migrations:
-	poetry run alembic revision --autogenerate -m "$(message)"
+	uv run alembic revision --autogenerate -m "$(message)"
